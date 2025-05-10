@@ -19,6 +19,8 @@ app.use(express.json({ limit: '50mb' }));
 // OCR Endpoint
 app.post('/ocr', async (req, res) => {
   try {
+    console.log('Received request');
+
     const { base64Image } = req.body;
 
     if (!base64Image) {
