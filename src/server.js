@@ -1,10 +1,19 @@
 const express = require('express');
 const Tesseract = require('tesseract.js');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON with large payload
+// CORS configuration
+const corsOptions = {
+  origin: '*', // Allow all origins
+  methods: ['POST', 'GET', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+// Middleware
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '50mb' }));
 
 // OCR Endpoint
