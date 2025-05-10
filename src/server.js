@@ -25,7 +25,9 @@ app.post('/ocr', async (req, res) => {
       'eng'
     );
 
-    res.json({ extractedText: text.trim() });
+    // Strip special characters and extra whitespace
+    const cleanedText = text.trim().replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, ' ');
+    res.json({ extractedText: cleanedText });
   } catch (error) {
     console.error('OCR Error:', error);
     res.status(500).json({ error: 'Text extraction failed' });
