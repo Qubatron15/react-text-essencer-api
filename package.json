@@ -1,0 +1,17 @@
+{
+  "name": "react-text-essencer-api",
+  "version": "1.0.0",
+  "description": "Simple Node.js OCR Backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ocr", "image", "text-extraction"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "tesseract.js": "^5.0.0"
+  }
+}
